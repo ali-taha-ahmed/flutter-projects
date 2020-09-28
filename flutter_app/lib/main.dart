@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       title: "im poor app",
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Im poor app example"),
+          title: Text("Im poor app to example"),
           backgroundColor: Colors.tealAccent,
         ),
         body: Center(
