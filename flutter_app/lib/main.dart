@@ -15,13 +15,29 @@ class MyApp extends StatelessWidget {
           title: Text("Im poor to  example"),
           backgroundColor: Colors.tealAccent,
         ),
-        body: Container(
+        body: SafeArea(
           child: Column(
+            mainAxisSize: MainAxisSize.min,
+            verticalDirection: VerticalDirection.up,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Center(
-                child: Text("Hello world"),
+              Container(
+                height: 150.0,
+                width: 150.0,
+                padding: EdgeInsets.all(18.5),
+                child: Image.asset("images/charcoal.png"),
               ),
-              Center(
+              Container(
+                height: 150.0,
+                width: 150.0,
+                padding: EdgeInsets.all(18.5),
+                child: Image.asset("images/charcoal.png"),
+              ),
+              Container(
+                height: 150.0,
+                width: 150.0,
+                padding: EdgeInsets.all(18.5),
                 child: Image.asset("images/charcoal.png"),
               ),
             ],
