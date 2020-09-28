@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       title: "im poor app",
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Im poor app to  example"),
+          title: Text("Im poor to  example"),
           backgroundColor: Colors.tealAccent,
         ),
         body: Container(
@@ -22,13 +22,12 @@ class MyApp extends StatelessWidget {
                 child: Text("Hello world"),
               ),
               Center(
-          child: Image.asset("images/charcoal.png"),
-        ),
+                child: Image.asset("images/charcoal.png"),
+              ),
             ],
           ),
         ),
       ),
     );
-
   }
 }
