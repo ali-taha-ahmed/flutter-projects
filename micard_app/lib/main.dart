@@ -18,7 +18,6 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.teal,
         body: SafeArea(
-
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -48,53 +47,49 @@ class MyApp extends StatelessWidget {
                     letterSpacing: 2.0,
                   ),
                 ),
-                Container(
-                  color: Colors.white,
+                SizedBox(
+                  height: 20,
+                  width: 160,
+                  child: Divider(
+                    color: Colors.teal[100],
+                  ),
+                ),
+                Card(
                   margin: EdgeInsets.symmetric(vertical: 10.0,horizontal: 25),
-                  padding: EdgeInsets.all(10.0),
-                  child: Row(
-                    children: [
-                      Icon(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ListTile(
+                      leading: Icon(
                         Icons.phone,
                         color: Colors.teal.shade900,
                       ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text(
+                      title: Text(
                         "+91 123 456 789",
                         style: TextStyle(
                           fontSize: 20,
                           color: Colors.teal.shade900,
-
                         ),
                       ),
-                    ],
+                    ),
                   ),
                 ),
-                Container(
-                  color: Colors.white,
+                Card(
                   margin: EdgeInsets.symmetric(vertical: 10.0,horizontal: 25),
-                  padding: EdgeInsets.all(10.0),
-                  child: Row(
-                    children: [
-                      Icon(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ListTile(
+                      leading: Icon(
                         Icons.email,
                         color: Colors.teal.shade900,
                       ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text(
+                      title: Text(
                         "ali.taha.projects@gmail.com",
                         style: TextStyle(
                           fontSize: 20,
                           color: Colors.teal.shade900,
-                          fontFamily: 'Source Sans Pro'
-
                         ),
                       ),
-                    ],
+                    ),
                   ),
                 )
               ],
