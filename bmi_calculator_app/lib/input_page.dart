@@ -16,6 +16,8 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   Gender selectedGender;
   int height = 180;
+  int weight = 60;
+  int age = 20;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -125,10 +127,106 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: [
                 Expanded(
-                  child: ReusableCard(color: kActiveCardColor),
+                  child: ReusableCard(
+                    color: kActiveCardColor,
+                    ourChild: Column(
+                      children: [
+                        Text(
+                          "WEIGHT",
+                          style: kLabelTextStyle,
+                        ),
+                        Text(
+                          weight.toString(),
+                          style: kNumberTextStyle,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            FloatingActionButton(
+                              elevation: 0.0,
+                              onPressed: () {
+                                setState(() {
+                                  weight--;
+                                });
+                              },
+                              backgroundColor: kFloatingButtonColor,
+                              child: Icon(
+                                FontAwesomeIcons.minus,
+                                color: Colors.white,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            FloatingActionButton(
+                              elevation: 0.0,
+                              onPressed: () {
+                                setState(() {
+                                  weight++;
+                                });
+                              },
+                              backgroundColor: kFloatingButtonColor,
+                              child: Icon(
+                                FontAwesomeIcons.plus,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
                 ),
                 Expanded(
-                  child: ReusableCard(color: kActiveCardColor),
+                  child: ReusableCard(
+                    color: kActiveCardColor,
+                    ourChild: Column(
+                      children: [
+                        Text(
+                          "Age",
+                          style: kLabelTextStyle,
+                        ),
+                        Text(
+                          age.toString(),
+                          style: kNumberTextStyle,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            FloatingActionButton(
+                              elevation: 0.0,
+                              onPressed: () {
+                                setState(() {
+                                  age--;
+                                });
+                              },
+                              backgroundColor: kFloatingButtonColor,
+                              child: Icon(
+                                FontAwesomeIcons.minus,
+                                color: Colors.white,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            FloatingActionButton(
+                              elevation: 0.0,
+                              onPressed: () {
+                                setState(() {
+                                  age++;
+                                });
+                              },
+                              backgroundColor: kFloatingButtonColor,
+                              child: Icon(
+                                FontAwesomeIcons.plus,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
                 ),
               ],
             ),
