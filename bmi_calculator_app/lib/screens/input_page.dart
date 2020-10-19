@@ -1,7 +1,9 @@
+import 'package:bmi_calculator_app/bmi_calculator.dart';
+import 'package:bmi_calculator_app/screens/result_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'constants.dart';
-import 'our_widgets.dart';
+import '../constants.dart';
+import '../components/our_widgets.dart';
 
 enum Gender {
   male,
@@ -18,11 +20,13 @@ class _InputPageState extends State<InputPage> {
   int height = 180;
   int weight = 60;
   int age = 20;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text('BMI Calculator')),
+        title: Text('BMI Calculator'),
+        centerTitle: true,
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -143,6 +147,7 @@ class _InputPageState extends State<InputPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             FloatingActionButton(
+                              heroTag: null,
                               elevation: 0.0,
                               onPressed: () {
                                 setState(() {
@@ -159,6 +164,7 @@ class _InputPageState extends State<InputPage> {
                               width: 10,
                             ),
                             FloatingActionButton(
+                              heroTag: null,
                               elevation: 0.0,
                               onPressed: () {
                                 setState(() {
@@ -194,6 +200,7 @@ class _InputPageState extends State<InputPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             FloatingActionButton(
+                              heroTag: null,
                               elevation: 0.0,
                               onPressed: () {
                                 setState(() {
@@ -210,6 +217,7 @@ class _InputPageState extends State<InputPage> {
                               width: 10,
                             ),
                             FloatingActionButton(
+                              heroTag: null,
                               elevation: 0.0,
                               onPressed: () {
                                 setState(() {
@@ -231,11 +239,28 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          Container(
-            height: kBottomContainerHeight,
-            width: double.infinity,
-            margin: EdgeInsets.only(top: 16.0),
-            color: kBottomCardColor,
+          GestureDetector(
+            onTap: () {
+              BMICalculator calc = BMICalculator(height, weight);
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => ResultPage(
+                          bmiResult: calc.calculateBMI(),
+                          resultText: calc.getResult(),
+                          interpretation: calc.getInterpretation())));
+            },
+            child: Container(
+              height: kBottomContainerHeight,
+              width: double.infinity,
+              margin: EdgeInsets.only(top: 16.0),
+              color: kBottomCardColor,
+              child: Center(
+                  child: Text(
+                "CALCULATE",
+                style: kLargeButtonTextStyle,
+              )),
+            ),
           ),
         ],
       ),
