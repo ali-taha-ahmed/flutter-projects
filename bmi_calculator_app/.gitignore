@@ -29,10 +29,7 @@
 .packages
 .pub-cache/
 .pub/
-/build/*
-!/build/app/outputs/flutter-apk/app-arm64-v8a-release.apk
-!/build/app/outputs/flutter-apk/app-armeabi-v7a-release.apk
-!/build/app/outputs/flutter-apk/app-x86_64-release.apk
+/build/
 
 # Web related
 lib/generated_plugin_registrant.dart
