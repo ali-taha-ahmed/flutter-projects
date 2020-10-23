@@ -1,5 +1,5 @@
 # flutter-projects #
-This reposotry is created to learn flutter programming git version control tools.
+This reposotry is created to learn flutter programming and git version control tools.
 ### The following apps are created to learn various flutter programming skills:
 
 * ### [Micard app](https://github.com/ali-taha-projects/flutter-projects/tree/master/micard_app).
